@@ -30,6 +30,11 @@ def hello():
     return render_template("about.html")
 
 
+@app.route("/easy-player")
+def easy_player():
+    return render_template("easy-player.html")
+
+
 @app.route('/create-article', methods=['POST', 'GET'])
 def create_article():
     if request.method == "POST":
