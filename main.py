@@ -35,6 +35,11 @@ def easy_player():
     return render_template("easy-player.html")
 
 
+@app.route("/ome-demo")
+def oven_player():
+    return render_template("ome_demo.html")
+
+
 @app.route('/create-article', methods=['POST', 'GET'])
 def create_article():
     if request.method == "POST":
