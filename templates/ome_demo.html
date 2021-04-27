@@ -33,18 +33,19 @@
     </div>
 </header>
 
-<!--<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
     $( document ).ready(function() {
 
-        var player = OvenPlayer.create("player", {
-            sources: [
-            {
-                "file": "ws://s8o.hopto.org:3333/app/stream?transport=tcp",
-                "type": "webrtc"}
-            ]
-        });
+	var player = OvenPlayer.create("player", {
+		    sources: [
+			      {
+				          "file": "wss://s8o.hopto.org:3334/app/stream?transport=tcp",
+				          "type": "webrtc"
+				        }
+			    ]
+	});
         player.on("ready", function(data){
         });
         player.on("error", function(error){
