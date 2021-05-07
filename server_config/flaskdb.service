@@ -1,0 +1,17 @@
+# Copy to  /etc/systemd/system/flaskdb.service
+[Unit]
+Description=Gunicorn instance to serve FlaskDb project.
+After=network.target
+
+[Service]
+User=oshevchenko
+Group=www-data
+
+WorkingDirectory=/home/oshevchenko/workspace/flask_venv/FlaskDb
+Environment="PATH=/home/oshevchenko/workspace/flask_venv/bin"
+
+ExecStart=/home/oshevchenko/workspace/flask_venv/bin/gunicorn --workers 3 --bind unix:flaskdb.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+
